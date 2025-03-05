@@ -3,19 +3,16 @@ import path from "path";
 import { fileURLToPath } from "url";
 import multer from "multer";
 import sharp from "sharp";
+import TextToSvg from "text-to-svg";
 
+///// COMMON CODE FOR FILE UPLOADING
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const uploadsDir = path.join(__dirname, "../uploads");
-const compressedDir = path.join(__dirname, "../compressed");
 
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
-}
-
-if (!fs.existsSync(compressedDir)) {
-  fs.mkdirSync(compressedDir, { recursive: true });
 }
 
 const storage = multer.diskStorage({
@@ -33,28 +30,32 @@ const upload = multer({
   storage,
   limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
 });
+//////
 
-const uploadImage = async (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: "No file uploaded!" });
-  }
-
+const CompressedDir = path.join(__dirname, "../compressed");
+const compressImg = async (req, res) => {
   try {
+    if (!fs.existsSync(CompressedDir)) {
+      fs.mkdirSync(CompressedDir, { recursive: true });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({ message: "No file uploaded!" });
+    }
+
     /// COMPRESSION OF IMAGE
     const inputPath = path.join(uploadsDir, req.file.filename);
-    const outputPath = path.join(compressedDir, req.file.filename);
+    const outputPath = path.join(CompressedDir, req.file.filename);
 
     await sharp(inputPath).jpeg({ quality: 70 }).toFile(outputPath);
 
     // DELETE THE ORIGINAL FILE
     fs.unlinkSync(inputPath);
 
-    // fileUrl = outputPath;
-
     res.status(200).json({
       message: "File compressed successfully",
       filename: req.file.filename,
-      url: `/compressed/${req.file.filename}`,
+      url: `http://localhost:6767/image/download/${req.file.filename}`,
     });
   } catch (error) {
     console.error("Upload error:", error);
@@ -62,4 +63,46 @@ const uploadImage = async (req, res) => {
   }
 };
 
-export { upload, uploadImage };
+const watermarkDir = path.join(__dirname, "../watermark");
+const addWatermark = async (req, res) => {
+  try {
+    if (!fs.existsSync(watermarkDir)) {
+      fs.mkdirSync(watermarkDir, { recursive: true });
+    }
+
+    const inputPath = path.join(uploadsDir, req.file.filename);
+
+    const outputPath = path.join(watermarkDir, req.file.filename);
+
+    const textToSvg = TextToSvg.loadSync();
+
+    // watermark text
+    const waterMarkText = "Confidential";
+
+    // convert to svg text {that will be applied to image as watermark}
+    const attributes = { fill: "rgba(255, 255, 255, 0.5)" };
+    const options = { x: 0, y: 0, fontSize: 50, anchor: "top", attributes };
+    const svgText = textToSvg.getSVG(waterMarkText, options);
+
+    // convert to Buffer
+    const svgBuffer = Buffer.from(svgText);
+
+    await sharp(inputPath)
+      .composite([{ input: svgBuffer, gravity: "southeast" }])
+      .toFile(outputPath);
+
+    res.status(200).json({
+      message: "watermark added successfully",
+      filename: req.file.filename,
+      url: `http://localhost:6767/image/watermark/${req.file.filename}`,
+    });
+    ////
+  } catch (err) {
+    console.log("Something went wrong!!, Watermark not added");
+    res
+      .status(400)
+      .json({ message: "Errour occured while adding watermark", err });
+  }
+};
+
+export { upload, CompressedDir, watermarkDir, compressImg, addWatermark };

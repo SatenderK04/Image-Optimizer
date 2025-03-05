@@ -5,20 +5,30 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="h-[100vh] w-[100vw] bg-gray-400 flex flex-col">
-      <div class="container  max-w-full h-[50vh] bg-gray-300">
-        <h1 className="font-semibold text-[2rem] my-1">
-          Welcome to ImageCompressor!
+      <div class="container max-w-full h-[50vh] bg-gradient-to-r from-gray-300 to-gray-200 flex flex-col items-center justify-center text-center px-6 shadow-lg rounded-lg">
+        <h1 class="font-bold text-4xl text-gray-800">
+          🚀 Welcome to <span class="text-blue-600">ImageCompressor</span>!
         </h1>
-        <p>
-          Effortlessly upload and compress your images while maintaining
+        <p class="text-lg text-gray-700 max-w-2xl">
+          Effortlessly upload and compress your images while maintaining high
           quality. Reduce file sizes for faster loading times and easy sharing.
         </p>
-        <ul>
-          <li>✅ Upload and compress images instantly</li>
-          <li>✅ Maintain high quality with reduced file size</li>
-          <li>✅ Supports JPG, PNG, and more</li>
+        <ul class="mt-1 space-y-2 text-gray-700 text-lg">
+          <li class="flex items-center">
+            <span class="text-green-600 text-2xl mr-2">✅</span> Upload and
+            compress images instantly
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-600 text-2xl mr-2">✅</span> Maintain high
+            quality with reduced file size
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-600 text-2xl mr-2">✅</span> Supports JPG,
+            PNG, and more
+          </li>
         </ul>
       </div>
+
       <div className="btn-container h-[50vh] w-[100%] ">
         <button
           onClick={() => {

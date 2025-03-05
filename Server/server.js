@@ -3,12 +3,15 @@ import imageRoutes from "./routes/imageRoutes.js";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +24,7 @@ app.use(
 
 // Serve static files from uploads directory
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/compressed", express.static(path.join(__dirname, "compressed")));
 
 app.use("/image", imageRoutes);
 
