@@ -1,0 +1,139 @@
+.remove-bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+.heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  /* border: 1px solid red; */
+  /* margin-bottom: 0.75rem; */
+}
+
+.upload-section {
+  position: relative;
+  padding: 1rem;
+  border: 2px dashed #4caf50;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-section:hover {
+  background: #e8f5e9;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.upload-text {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.image-preview {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.processed-section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  background-color: #e8f5e9;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.download-link:hover {
+  background-color: #388e3c;
+}
+
+.button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.loader {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.file-upload-label-s {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  border: 2px dashed #a3a3a3;
+  border-radius: 10px;
+  background: #f8fafc;
+  width: 30vw;
+  margin-bottom: 1rem;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.file-upload-label-s:hover {
+  background: #eef2f7;
+  border-color: #16a34a;
+  /* border-color: red; */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

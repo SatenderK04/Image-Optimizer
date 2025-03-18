@@ -25,6 +25,8 @@ app.use(
 // Serve static files from uploads directory
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/compressed", express.static(path.join(__dirname, "compressed")));
+app.use("/watermark", express.static(path.join(__dirname, "watermark")));
+app.use("/removebg", express.static(path.join(__dirname, "removebg")));
 
 app.use("/image", imageRoutes);
 

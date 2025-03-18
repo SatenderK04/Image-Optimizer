@@ -1,4 +1,9 @@
 node_modules/
+
+uploads/
+compressed/
+watermark/
+removebg/
 # Logs
 logs
 *.log

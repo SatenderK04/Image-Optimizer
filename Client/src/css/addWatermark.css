@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70vw;
+  /* height: 80vh; */
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: auto;
+  min-height: 85vh;
+  overflow: hidden;
+  /* border: 1px solid red;+ */
+}
+
+.upload-section,
+.options-section {
+  width: 45%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  border: 1px solid black;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+  max-height: 100%;
+
+  /* overflow-y: auto; */
+}
+.upload-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  height: auto;
+  min-height: 300px;
+}
+
+.upload-section .file-label {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  background-color: #e5e7eb;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.file-label .upload-icon {
+  color: rgb(55, 55, 55);
+  margin: 0 auto;
+  /* opacity: 0.6; */
+}
+.file-label:hover {
+  background-color: #f3f4f6;
+}
+
+.image-preview {
+  min-width: 100%;
+  min-height: 300px;
+  margin-top: 16px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.input-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between checkbox and label */
+  margin-top: 10px;
+
+  border-radius: 6px;
+  padding: 8px 12px;
+  background-color: #f3f4f6; /* Light background for contrast */
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #3b82f6; /* Ensures checkbox color matches theme */
+}
+
+.checkbox-group label {
+  font-size: 16px;
+  color: #1f2937; /* Darker text for better readability */
+  cursor: pointer;
+}
+
+.upload-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #2563eb;
+}
+
+.download-section {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.download-section a {
+  display: inline-block;
+  background-color: #10b981;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.download-section a:hover {
+  background-color: #059669;
+}
