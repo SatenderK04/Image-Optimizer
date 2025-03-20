@@ -34,7 +34,7 @@ const ImageCompress = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8787/image/upload",
+        "https://image-optimizer-server.onrender.com/image/upload",
         formData,
         {
           headers: {
@@ -47,7 +47,7 @@ const ImageCompress = () => {
 
       console.log("File uploaded", response.data);
       setDownloadUrl(
-        `http://localhost:8787/image/download/compressed/${response.data.filename}`
+        `https://image-optimizer-server.onrender.com/image/download/compressed/${response.data.filename}`
       );
     } catch (error) {
       console.error("Upload error:", error);
