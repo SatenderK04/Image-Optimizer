@@ -24,8 +24,8 @@ A full-stack web application that provides three major image processing features
 
 ## 🌐 Live Demo
 
-[Deployed Application](https://image-optimizer-client.onrender.com) ![image](https://github.com/user-attachments/assets/c6623f74-b7f1-4195-b88c-95f7d5fced51)
-There might be some issues is deployed project.
+[Deployed Application](https://image-optimizer-client.onrender.com) ⚠️ **Warning:** There might be some issues in the deployed project.
+
 
 ## 🏗️ Installation Guide
 
