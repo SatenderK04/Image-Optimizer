@@ -16,7 +16,7 @@ A full-stack web application that provides three major image processing features
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, Redux Toolkit (State Management)
+- **Frontend**: React.js
 - **Backend**: Node.js, Express.js
 - **Image Processing**: `sharp`
 - **Storage**: Cloud-based storage (TBD)
@@ -32,7 +32,7 @@ Follow these steps to set up the project locally:
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-username/image-optimizer.git
+git clone https://github.com/SatenderK04/image-optimizer.git
 cd image-optimizer
 ```
 
@@ -60,7 +60,7 @@ CLIENT_URL=https://image-optimizer-client.onrender.com
 ```
 
 ### 4️⃣ Run the Application
-- Open `http://localhost:3000` for the frontend.
+- Open `http://localhost:5173` for the frontend.
 - Backend runs on `http://localhost:5000`.
 
 ## 📜 API Endpoints
