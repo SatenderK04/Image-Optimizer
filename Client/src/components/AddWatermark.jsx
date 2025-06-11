@@ -47,14 +47,14 @@ const AddWatermark = () => {
 
     try {
       const response = await axios.post(
-        "https://image-optimizer-server.onrender.com/watermark",
+        "http://localhost:8787/image/watermark",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
       setDownloadUrl(
-        `https://image-optimizer-server.onrender.com/image/download/watermark/${response.data.filename}`
+        `http://localhost:8787/image/download/watermark/${response.data.filename}`
       );
     } catch (error) {
       console.error("Error uploading file:", error);

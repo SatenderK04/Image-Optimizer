@@ -44,13 +44,13 @@ const RemoveBg = () => {
 
     try {
       const response = await axios.post(
-        "https://image-optimizer-server.onrender.com/image/removebg",
+        "http://localhost:8787/image/removebg",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
         }
       );
-      const imageUrl = `https://image-optimizer-server.onrender.com/image/download/removebg/${response.data.filename}`;
+      const imageUrl = `http://localhost:8787/image/download/removebg/${response.data.filename}`;
       setProcessedImage(imageUrl);
     } catch (error) {
       console.error("Error removing background:", error);

@@ -56,7 +56,7 @@ const compressImg = async (req, res) => {
     res.status(200).json({
       message: "File compressed successfully",
       filename: req.file.filename,
-      url: `https://image-optimizer-server.onrender.com/image/download/${req.file.filename}`,
+      url: `http://localhost:8787/image/download/${req.file.filename}`,
     });
   } catch (error) {
     console.error("Upload error:", error);
@@ -136,7 +136,7 @@ const addWatermark = async (req, res) => {
     res.status(200).json({
       message: "Watermark added successfully",
       filename: req.file.filename,
-      url: `https://image-optimizer-server.onrender.com/image/download/${req.file.filename}`,
+      url: `http://localhost:8787/image/download/${req.file.filename}`,
     });
   } catch (err) {
     console.error("Error adding watermark:", err);
@@ -163,7 +163,7 @@ const removeBG = async (req, res) => {
     res.status(200).json({
       message: "background removal successful",
       filename: req.file.filename,
-      url: `https://image-optimizer-server.onrender.com/image/download/${req.file.filename}.png`,
+      url: `http://localhost:8787/image/download/${req.file.filename}.png`,
     });
   } catch (err) {
     console.log("Something went wrong, while remove background.", err);
