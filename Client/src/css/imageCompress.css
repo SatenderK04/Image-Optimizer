@@ -133,3 +133,16 @@
   background: #15803d;
   transform: translateY(-2px);
 }
+
+.back-btn {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  /* position: absolute; */
+  font-size: 1.5rem;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 50%;
+  top: 1rem;
+  cursor: pointer;
+}
