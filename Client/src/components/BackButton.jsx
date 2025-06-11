@@ -8,8 +8,8 @@ const BackButton = () => {
     navigate("/");
   };
   return (
-    <div className="back-button" onClick={handleOnClick}>
-      <FaArrowLeft className="arrow-icon" />
+    <div className="back-btn" onClick={handleOnClick}>
+      <FaArrowLeft className="arrow-icon" size={"2rem"} />
     </div>
   );
 };

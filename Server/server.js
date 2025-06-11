@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "https://image-optimizer-client.onrender.com", // Update with your React app's origin
+    origin: "http://localhost:5173", // Update with your React app's origin
     credentials: true,
   })
 );

@@ -1,17 +1,10 @@
 @import "tailwindcss";
 * {
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 128, 255, 0.6),
-    rgba(0, 255, 128, 0.6)
-  );
-  backdrop-filter: blur(10px);
-  /* border-radius: 15px; */
-  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  */
+  background: #f6f6f6;
 }
